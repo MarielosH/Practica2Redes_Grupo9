@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-dark bg-dark p-4">
+        <!-- Navbar content -->
+        <form class="form-inline my-2 my-lg-0" method="GET" action="/">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">HOME</button>
+          </form>
+    </nav>
+
+
+ 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-7">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Año</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < datali.length; i++) { %>
+                        <tr>
+                            <th scope="row"><%= i+1 %></th>
+                            <td><%= datali[i].titulo %></td>
+                            <td><%= datali[i].autor%></td>
+                            <td><%= datali[i].anio %></td>
+
+                        </tr>
+                        <% } %>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="col-4 ml-4">
+
+              <div class="card">
+                  <div class="card-body">
+                    <form method="POST" action="/books" class="">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Titulo del Libro:</label>
+                            <input type="text" class="form-control" name="titulo" aria-describedby="emailHelp">
+                          
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Autor del Libro:</label>
+                            <input type="text" class="form-control" name="autor">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Año de Publicacion:</label>
+                            <input type="text" class="form-control" name="anio">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
